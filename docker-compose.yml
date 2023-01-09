@@ -1,0 +1,32 @@
+# Menggunakan Docker Compose versi 2 atau lebih.
+version: '3.7'
+
+# Memiliki dua buah service: item-app dan item-db.
+services:
+  # item-app
+  item-app:
+    # Menggunakan image item-app dari Docker Hub (atau GitHub Packages bila menerapkan saran keempat).
+    image: hfauzy/item-app:v1
+    # Menerapkan restart policy pada berkas docker-compose.yml agar container selalu restart ketika terhenti.
+    restart: always
+    # ekspos bahwa port yang digunakan oleh aplikasi adalah 8080.
+    ports:
+      - 80:8080
+    # Pastikan item-app hanya berjalan setelah item-db diluncurkan.
+    depends_on:
+      - item-db
+    volumes:
+      - ./log.txt:/app/log.txt
+  # item-db
+  item-db:
+    # Menggunakan image mongo:3 dari Docker Hub.
+    image: mongo:3
+    # Memakai volume bernama app-db dengan target /data/db di container.
+    volumes:
+      - app-db:/data/db
+    volumes:
+      - ./log.txt:/app/log.txt
+
+# Memiliki satu buah volume bernama app-db.
+volumes:
+  app-db:
