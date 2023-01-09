@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #membuat Docker image dari Dockerfile yang tadi dibuat, dengan nama image item-app, dan memiliki tag v1.
-docker build -t item-app:v1 .
+docker build -t item-app:v2 .
 echo '\n'
 echo '\n' 
 
@@ -11,7 +11,7 @@ echo '\n'
 echo '\n'
 
 # Mengubah nama image agar sesuai dengan format Docker Hub
-docker tag item-app:v1 hfauzy/item-app:v1
+docker tag item-app:v2 hfauzy/item-app:v2
 echo '\n'
 echo '\n'
 
@@ -24,6 +24,6 @@ echo '\n'
 echo '\n'
 
 # Mengunggah image ke Docker Hub/GitHub Packages
-docker push hfauzy/item-app:v1
+docker push hfauzy/item-app:v2
 echo '\n'
 echo '\n'

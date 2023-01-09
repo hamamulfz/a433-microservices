@@ -17,4 +17,4 @@ RUN npm install --production --unsafe-perm && npm run build
 EXPOSE 8080
 
 # Saat container diluncurkan, jalankan server dengan perintah npm start.
-CMD ["node", "src/index.js"]
+CMD ["npm", "start"]

@@ -6,7 +6,7 @@ services:
   # item-app
   item-app:
     # Menggunakan image item-app dari Docker Hub (atau GitHub Packages bila menerapkan saran keempat).
-    image: hfauzy/item-app:v1
+    image: hfauzy/item-app:v2
     # Menerapkan restart policy pada berkas docker-compose.yml agar container selalu restart ketika terhenti.
     restart: always
     # ekspos bahwa port yang digunakan oleh aplikasi adalah 8080.
@@ -24,6 +24,8 @@ services:
     # Memakai volume bernama app-db dengan target /data/db di container.
     volumes:
       - app-db:/data/db
+    # Menerapkan restart policy pada berkas docker-compose.yml agar container selalu restart ketika terhenti.
+    restart: always
     volumes:
       - ./log.txt:/app/log.txt
 
