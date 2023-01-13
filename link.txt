@@ -1,0 +1,6 @@
+Github Fork - branch submission1
+https://github.com/hamamulfz/a433-microservices
+https://github.com/hamamulfz/a433-microservices/tree/submission1
+
+Docker hub
+https://hub.docker.com/r/hfauzy/item-app
