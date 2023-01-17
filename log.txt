@@ -1,0 +1,4 @@
+ docker compose up -d                                                             ✔  4643  13:17:19
+[+] Running 2/2
+ ⠿ Container submission1-item-db-1   Running                                                      0.0s
+ ⠿ Container submission1-item-app-1  Started                                                      2.4s
